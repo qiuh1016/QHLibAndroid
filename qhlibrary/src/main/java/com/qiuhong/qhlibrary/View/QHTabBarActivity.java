@@ -1,6 +1,5 @@
 package com.qiuhong.qhlibrary.View;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -20,7 +19,7 @@ import java.util.List;
 abstract public class QHTabBarActivity extends AppCompatActivity {
 
     private QHNoScrollViewPager viewPager;
-    private QHTabBar tab_Bar;
+    private QHTabBar tabBar;
     private QHSectionsPagerAdapter sectionsPagerAdapter;
 
     @Override
@@ -41,7 +40,7 @@ abstract public class QHTabBarActivity extends AppCompatActivity {
     }
 
     private void initViews(List<Fragment> fragments) {
-        tab_Bar = findViewById(R.id.tab_bar);
+        tabBar = findViewById(R.id.tab_bar);
         viewPager = findViewById(R.id.view_pager);
 
         sectionsPagerAdapter = new QHSectionsPagerAdapter(getSupportFragmentManager(), fragments);
@@ -57,7 +56,7 @@ abstract public class QHTabBarActivity extends AppCompatActivity {
 
                 @Override
                 public void onPageSelected(int position) {
-                    tab_Bar.setFocus(position);
+                    tabBar.setFocus(position);
                 }
 
                 @Override
@@ -70,16 +69,28 @@ abstract public class QHTabBarActivity extends AppCompatActivity {
         }
 
 
-        tab_Bar.setTabTextAndImage(
+        tabBar.setTabTextAndImage(
                 initTabText(),
                 initTabNormalImages(),
                 initTabFocusImages()
         );
-        tab_Bar.setClickCallback(new QHTabBar.TabBarClickCallback() {
+        tabBar.setClickCallback(new QHTabBar.TabBarClickCallback() {
             @Override
             public void onTabClick(int tabNumber) {
                 viewPager.setCurrentItem(tabNumber, false);
             }
         });
+    }
+
+    public QHTabBar getTabBar() {
+        return this.tabBar;
+    }
+
+    public QHNoScrollViewPager getViewPager() {
+        return viewPager;
+    }
+
+    public QHSectionsPagerAdapter getSectionsPagerAdapter() {
+        return sectionsPagerAdapter;
     }
 }

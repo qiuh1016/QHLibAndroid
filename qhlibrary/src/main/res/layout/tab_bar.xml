@@ -16,12 +16,13 @@
 
         <ImageView
             android:id="@+id/tab_image_0"
-            android:layout_width="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginTop="2dp"
             android:adjustViewBounds="true"
             android:contentDescription="@null"
-            android:src="@mipmap/tab_icon_chat_normal"
-            android:layout_height="25dp" />
+            android:src="@mipmap/tab_icon_chat_normal" />
+        
         <TextView
             android:id="@+id/tab_text_0"
             android:layout_width="wrap_content"
@@ -42,12 +43,12 @@
 
         <ImageView
             android:id="@+id/tab_image_1"
-            android:layout_width="25dp"
+            android:layout_width="30dp"
             android:layout_marginTop="2dp"
             android:adjustViewBounds="true"
             android:contentDescription="@null"
             android:src="@mipmap/tab_icon_chat_normal"
-            android:layout_height="25dp" />
+            android:layout_height="30dp" />
         <TextView
             android:id="@+id/tab_text_1"
             android:layout_width="wrap_content"
@@ -68,12 +69,12 @@
 
         <ImageView
             android:id="@+id/tab_image_2"
-            android:layout_width="25dp"
+            android:layout_width="30dp"
             android:layout_marginTop="2dp"
             android:adjustViewBounds="true"
             android:contentDescription="@null"
             android:src="@mipmap/tab_icon_chat_normal"
-            android:layout_height="25dp" />
+            android:layout_height="30dp" />
         <TextView
             android:id="@+id/tab_text_2"
             android:layout_width="wrap_content"
@@ -94,12 +95,12 @@
 
         <ImageView
             android:id="@+id/tab_image_3"
-            android:layout_width="25dp"
+            android:layout_width="30dp"
             android:layout_marginTop="2dp"
             android:adjustViewBounds="true"
             android:contentDescription="@null"
             android:src="@mipmap/tab_icon_chat_normal"
-            android:layout_height="25dp" />
+            android:layout_height="30dp" />
         <TextView
             android:id="@+id/tab_text_3"
             android:layout_width="wrap_content"
@@ -120,12 +121,12 @@
 
         <ImageView
             android:id="@+id/tab_image_4"
-            android:layout_width="25dp"
+            android:layout_width="30dp"
             android:layout_marginTop="2dp"
             android:adjustViewBounds="true"
             android:contentDescription="@null"
             android:src="@mipmap/tab_icon_chat_normal"
-            android:layout_height="25dp" />
+            android:layout_height="30dp" />
         <TextView
             android:id="@+id/tab_text_4"
             android:layout_width="wrap_content"

@@ -14,11 +14,12 @@ public class MainActivity extends QHTabBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
+        super.getViewPager().setCurrentItem(2);
     }
 
     @Override
     protected String[] initTabText() {
-        return new String[] {"SOS", "位置", "消息", "好友"};
+        return new String[] {"SOS", "位置", "消息", "好友", "我的"};
     }
 
     @Override
@@ -54,6 +55,7 @@ public class MainActivity extends QHTabBarActivity {
         fragments.add(BlankFragment.newInstance(1));
         fragments.add(BlankFragment.newInstance(2));
         fragments.add(BlankFragment.newInstance(3));
+        fragments.add(BlankFragment.newInstance(4));
         fragments.add(BlankFragment.newInstance(4));
         return fragments;
     }
