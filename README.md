@@ -1,7 +1,7 @@
 qhLibrary
 ============
 
-[![](https://jitpack.io/v/qiuh1016/qhLibrary.svg)](https://jitpack.io/#qiuh1016/qhLibrary)
+[![](https://jitpack.io/v/qiuh1016/QHLibAndroid.svg)](https://jitpack.io/#qiuh1016/QHLibAndroid)
 
 <!-- ![](pic.png =100*80) -->
 
@@ -24,7 +24,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        compile 'com.github.qiuh1016:qhLibrary:1.3.2'
+	        compile 'com.github.qiuh1016:QHLibAndroid:1.4.1'
 	}
 
 
@@ -136,6 +136,14 @@ Then:
         fragments.add(BlankFragment.newInstance(4));
         return fragments;
     }
+
+you can set current fragment by :
+    
+    super.getViewPager().setCurrentItem(index);
+
+or
+
+    setCurrentFragment(index);
 
 
 Contact me

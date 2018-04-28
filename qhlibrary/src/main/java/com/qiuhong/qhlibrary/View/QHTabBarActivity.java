@@ -38,6 +38,9 @@ abstract public class QHTabBarActivity extends AppCompatActivity {
     protected boolean setScrollEnable() {
         return false;
     }
+    protected void setCurrentFragment(int i) {
+        this.viewPager.setCurrentItem(i);
+    }
 
     private void initViews(List<Fragment> fragments) {
         tabBar = findViewById(R.id.tab_bar);

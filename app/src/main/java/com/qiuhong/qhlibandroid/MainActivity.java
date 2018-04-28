@@ -14,7 +14,8 @@ public class MainActivity extends QHTabBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        super.getViewPager().setCurrentItem(2);
+//        super.getViewPager().setCurrentItem(2);
+        setCurrentFragment(2);
     }
 
     @Override
