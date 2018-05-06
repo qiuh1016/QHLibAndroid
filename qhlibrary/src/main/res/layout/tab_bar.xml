@@ -2,151 +2,137 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <LinearLayout
+        android:id="@+id/ly_0"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        android:gravity="center">
 
-    <TextView
-        android:id="@+id/separate_line"
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#000000"/>
+        <ImageView
+            android:id="@+id/tab_image_0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@mipmap/tab_icon_chat_normal" />
+
+        <TextView
+            android:id="@+id/tab_text_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="SOS"/>
+
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:id="@+id/ly_1"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        android:gravity="center">
 
-        <LinearLayout
-            android:id="@+id/ly_0"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="2dp"
-            android:gravity="center">
+        <ImageView
+            android:id="@+id/tab_image_1"
+            android:layout_width="30dp"
+            android:layout_marginTop="2dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@mipmap/tab_icon_chat_normal"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/tab_text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="位置"/>
 
-            <ImageView
-                android:id="@+id/tab_image_0"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="2dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:src="@mipmap/tab_icon_chat_normal" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/tab_text_0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="SOS"/>
+    <LinearLayout
+        android:id="@+id/ly_2"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        android:gravity="center">
 
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/tab_image_2"
+            android:layout_width="30dp"
+            android:layout_marginTop="2dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@mipmap/tab_icon_chat_normal"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/tab_text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="消息"/>
 
-        <LinearLayout
-            android:id="@+id/ly_1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="2dp"
-            android:gravity="center">
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/tab_image_1"
-                android:layout_width="30dp"
-                android:layout_marginTop="2dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:src="@mipmap/tab_icon_chat_normal"
-                android:layout_height="30dp" />
-            <TextView
-                android:id="@+id/tab_text_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="位置"/>
+    <LinearLayout
+        android:id="@+id/ly_3"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        android:gravity="center">
 
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/tab_image_3"
+            android:layout_width="30dp"
+            android:layout_marginTop="2dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@mipmap/tab_icon_chat_normal"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/tab_text_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="好友"/>
 
-        <LinearLayout
-            android:id="@+id/ly_2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="2dp"
-            android:gravity="center">
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/tab_image_2"
-                android:layout_width="30dp"
-                android:layout_marginTop="2dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:src="@mipmap/tab_icon_chat_normal"
-                android:layout_height="30dp" />
-            <TextView
-                android:id="@+id/tab_text_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="消息"/>
+    <LinearLayout
+        android:id="@+id/ly_4"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        android:gravity="center">
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ly_3"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="2dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/tab_image_3"
-                android:layout_width="30dp"
-                android:layout_marginTop="2dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:src="@mipmap/tab_icon_chat_normal"
-                android:layout_height="30dp" />
-            <TextView
-                android:id="@+id/tab_text_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="好友"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ly_4"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="2dp"
-            android:gravity="center">
-
-            <ImageView
-                android:id="@+id/tab_image_4"
-                android:layout_width="30dp"
-                android:layout_marginTop="2dp"
-                android:adjustViewBounds="true"
-                android:contentDescription="@null"
-                android:src="@mipmap/tab_icon_chat_normal"
-                android:layout_height="30dp" />
-            <TextView
-                android:id="@+id/tab_text_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="设置"/>
-
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/tab_image_4"
+            android:layout_width="30dp"
+            android:layout_marginTop="2dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:src="@mipmap/tab_icon_chat_normal"
+            android:layout_height="30dp" />
+        <TextView
+            android:id="@+id/tab_text_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="设置"/>
 
     </LinearLayout>
 

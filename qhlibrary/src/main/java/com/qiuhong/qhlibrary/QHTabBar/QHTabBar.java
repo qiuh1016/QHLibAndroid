@@ -28,7 +28,6 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
     private int[] normalImages;
     private int[] focusImages;
     private View view;
-    private TextView separate_line;
 
     private Context context;
 
@@ -44,8 +43,6 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
     }
 
     private void initView() {
-        separate_line = view.findViewById(R.id.separate_line);
-
         ImageView tab_image_0 = view.findViewById(R.id.tab_image_0);
         ImageView tab_image_1 = view.findViewById(R.id.tab_image_1);
         ImageView tab_image_2 = view.findViewById(R.id.tab_image_2);
@@ -163,14 +160,6 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
         for (TextView textView: tabTextList) {
             textView.setTextColor(color);
         }
-    }
-
-    /**
-     * 设置分割线颜色
-     * @param color
-     */
-    public void setSeparateLineColor(int color) {
-        separate_line.setBackgroundColor(color);
     }
 
 }
