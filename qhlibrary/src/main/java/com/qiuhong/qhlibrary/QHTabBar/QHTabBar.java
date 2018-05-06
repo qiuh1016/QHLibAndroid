@@ -1,6 +1,7 @@
 package com.qiuhong.qhlibrary.QHTabBar;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.qiuhong.qhlibrary.R;
+import com.qiuhong.qhlibrary.Utils.DensityUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,10 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
     private int[] normalImages;
     private int[] focusImages;
     private View view;
+    private LinearLayout ly_bg;
+    private TextView separate_line;
+
+    private Context context;
 
     public QHTabBar(Context context){
         this(context, null);
@@ -33,11 +39,15 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
 
     public QHTabBar(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
         view = LayoutInflater.from(context).inflate(R.layout.tab_bar, this, true);
         initView();
     }
 
     private void initView() {
+        ly_bg = view.findViewById(R.id.ly_bg);
+        separate_line = view.findViewById(R.id.separate_line);
+
         ImageView tab_image_0 = view.findViewById(R.id.tab_image_0);
         ImageView tab_image_1 = view.findViewById(R.id.tab_image_1);
         ImageView tab_image_2 = view.findViewById(R.id.tab_image_2);
@@ -67,6 +77,7 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
         view.findViewById(R.id.ly_2).setOnClickListener(this);
         view.findViewById(R.id.ly_3).setOnClickListener(this);
         view.findViewById(R.id.ly_4).setOnClickListener(this);
+
     }
 
     public void setTabTextAndImage(String[] texts, int[] normalImages, int[] focusImages) {
@@ -115,9 +126,6 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
     }
 
     public interface TabBarClickCallback {
-        /**
-         * 点击返回按钮回调
-         */
         void onTabClick(int tabNumber);
     }
 
@@ -128,5 +136,51 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
         tabImageList.get(position).setImageResource(focusImages[position]);
     }
 
+    /**
+     * 设置tab图片大小
+     * @param dp
+     */
+    public void setImageSize(int dp) {
+        int px = DensityUtil.dip2px(context, dp);
+        for (ImageView imageView: tabImageList) {
+            imageView.setLayoutParams(new LinearLayout.LayoutParams(px, px));
+        }
+    }
+
+    /**
+     * 设置tab文字大小
+     * @param sp
+     */
+    public void setTextSize(int sp) {
+        for (TextView textView: tabTextList) {
+            textView.setTextSize(sp);
+        }
+    }
+
+    /**
+     * 设置tab文字颜色
+     * @param color
+     */
+    public void setTextColor(int color) {
+        for (TextView textView: tabTextList) {
+            textView.setTextColor(color);
+        }
+    }
+
+    /**
+     * 设置tab bar背景颜色
+     * @param color
+     */
+    public void setBackgroundColor(int color) {
+        ly_bg.setBackgroundColor(color);
+    }
+
+    /**
+     * 设置分割线颜色
+     * @param color
+     */
+    public void setSeparateLineColor(int color) {
+        separate_line.setBackgroundColor(color);
+    }
 
 }
