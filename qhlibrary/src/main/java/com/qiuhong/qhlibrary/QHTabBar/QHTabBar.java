@@ -171,7 +171,7 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
      * 设置tab bar背景颜色
      * @param color
      */
-    public void setBackgroundColor(int color) {
+    public void setBackColor(int color) {
         ly_background.setBackgroundColor(color);
     }
 
