@@ -16,6 +16,8 @@ public class MainActivity extends QHTabBarActivity {
         getSupportActionBar().hide();
 //        super.getViewPager().setCurrentItem(2);
         setCurrentFragment(2);
+
+        getTabBar().setImageSize(30);
     }
 
     @Override
