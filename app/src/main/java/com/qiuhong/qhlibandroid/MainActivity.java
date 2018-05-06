@@ -19,6 +19,7 @@ public class MainActivity extends QHTabBarActivity {
 
 //        getTabBar().setImageSize(30);
 //        getTabBar().setBackColor(getResources().getColor(R.color.colorAccent));
+        setTwiceBackExitEnable(false);
     }
 
     @Override

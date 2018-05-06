@@ -1,9 +1,11 @@
 package com.qiuhong.qhlibrary.View;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.qiuhong.qhlibrary.QHTabBar.QHTabBar;
 import com.qiuhong.qhlibrary.QHViewPager.QHNoScrollViewPager;
@@ -22,6 +24,11 @@ abstract public class QHTabBarActivity extends AppCompatActivity {
     private QHTabBar tabBar;
     private QHSectionsPagerAdapter sectionsPagerAdapter;
 
+    //按2次返回退出
+    private boolean enableTwiceBackToExit = true;
+    private boolean hasPressedBackOnce = false;
+    private Toast backToast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +45,7 @@ abstract public class QHTabBarActivity extends AppCompatActivity {
     protected boolean setScrollEnable() {
         return false;
     }
+
     protected void setCurrentFragment(int i) {
         this.viewPager.setCurrentItem(i);
     }
@@ -95,5 +103,30 @@ abstract public class QHTabBarActivity extends AppCompatActivity {
 
     public QHSectionsPagerAdapter getSectionsPagerAdapter() {
         return sectionsPagerAdapter;
+    }
+
+    public void setTwiceBackExitEnable(boolean enable) {
+        this.enableTwiceBackToExit = enable;
+    }
+
+    public void onBackPressed() {
+        if (enableTwiceBackToExit) {
+            if (!hasPressedBackOnce) {
+                backToast = Toast.makeText(this, "再按一次返回键退出程序", Toast.LENGTH_SHORT);
+                backToast.show();
+                hasPressedBackOnce = true;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        hasPressedBackOnce = false;
+                    }
+                },2500);
+            } else {
+                backToast.cancel();
+                super.onBackPressed();
+            }
+        } else {
+            super.onBackPressed();
+        }
     }
 }
