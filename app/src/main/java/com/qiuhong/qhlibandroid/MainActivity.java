@@ -18,6 +18,7 @@ public class MainActivity extends QHTabBarActivity {
         setCurrentFragment(2);
 
         getTabBar().setImageSize(30);
+//        getTabBar().setBackgroundColor(getResources().getColor(R.color.colorAccent));
     }
 
     @Override

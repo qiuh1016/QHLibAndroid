@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/ly_background"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -14,6 +13,7 @@
         android:background="#000000"/>
 
     <LinearLayout
+        android:id="@+id/ly_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
