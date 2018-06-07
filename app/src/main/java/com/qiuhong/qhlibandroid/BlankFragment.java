@@ -2,10 +2,14 @@ package com.qiuhong.qhlibandroid;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.qiuhong.qhlibrary.QHEditDialog.QHEditDialog;
 
 /**
  * Created by qiuhong on 28/04/2018.
@@ -41,6 +45,20 @@ public class BlankFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_blank, container, false);
         TextView textView = rootView.findViewById(R.id.section_label);
         textView.setText("Hello World from section: " + getArguments().getInt(ARG_SECTION_NUMBER));
+        rootView.findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                QHEditDialog qhEditDialog = new QHEditDialog(getActivity());
+                qhEditDialog.setTitle("IP", "PORT");
+                qhEditDialog.setOnBtnClicked(new QHEditDialog.OnBtnClicked() {
+                    @Override
+                    public void onConfirmClicked(String str1, String str2) {
+                        Toast.makeText(getActivity(), str1 + " , " + str2, Toast.LENGTH_SHORT).show();
+                    }
+                });
+                qhEditDialog.show();
+            }
+        });
         return rootView;
     }
 }
