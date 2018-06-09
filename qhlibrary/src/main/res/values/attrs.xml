@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--************ QMUILoading ***********-->
+    <declare-styleable name="QHLoadingView">
+        <attr name="qh_loading_view_size" format="dimension"/>
+        <attr name="android:color"/>
+    </declare-styleable>
+    <attr name="QHLoadingStyle" format="reference"/>
+</resources>

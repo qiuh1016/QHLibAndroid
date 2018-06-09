@@ -2,6 +2,7 @@ package com.qiuhong.qhlibandroid;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +12,15 @@ import android.widget.Toast;
 
 import com.qiuhong.qhlibrary.QHDialog.QHEditDialog;
 import com.qiuhong.qhlibrary.QHDialog.QHTextDialog;
+import com.qiuhong.qhlibrary.QHDialog.QHOwnTipDialog;
 import com.qiuhong.qhlibrary.QHDialog.QHTipDialog;
-
 /**
  * Created by qiuhong on 28/04/2018.
  */
 
 public class BlankFragment extends Fragment {
+
+    QHTipDialog qhTipDialog;
 
     /**
      * The fragment argument representing the section number for this
@@ -98,9 +101,33 @@ public class BlankFragment extends Fragment {
         rootView.findViewById(R.id.btn_tip).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                QHTipDialog qhTipDialog = new QHTipDialog(getActivity());
-                qhTipDialog.setText("正在加载中");
+//                QHOwnTipDialog qhOwnTipDialog = new QHOwnTipDialog(getActivity());
+//                qhOwnTipDialog.setText("正在加载中");
+//                qhOwnTipDialog.show();
+
+                qhTipDialog = new QHTipDialog.Builder(getActivity())
+                        .setIconType(QHTipDialog.Builder.ICON_TYPE_LOADING)
+                        .setTipWord("加载中")
+                        .create(false);
                 qhTipDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        qhTipDialog.dismiss();
+                        qhTipDialog = new QHTipDialog.Builder(getActivity())
+                                .setIconType(QHTipDialog.Builder.ICON_TYPE_SUCCESS)
+                                .setTipWord("加载成功")
+                                .create(false);
+                        qhTipDialog.show();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                qhTipDialog.dismiss();
+                            }
+                        }, 1500);
+
+                    }
+                }, 3000);
             }
         });
 
