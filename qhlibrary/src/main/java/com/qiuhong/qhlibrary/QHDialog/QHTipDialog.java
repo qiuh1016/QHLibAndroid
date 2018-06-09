@@ -102,6 +102,9 @@ public class QHTipDialog extends Dialog {
          */
         public static final int ICON_TYPE_INFO = 4;
 
+        private int loadingSize = 32;
+        private int textSize = 14;
+
         @IntDef({ICON_TYPE_NOTHING, ICON_TYPE_LOADING, ICON_TYPE_SUCCESS, ICON_TYPE_FAIL, ICON_TYPE_INFO})
         @Retention(RetentionPolicy.SOURCE)
         public @interface IconType {
@@ -135,6 +138,22 @@ public class QHTipDialog extends Dialog {
             return this;
         }
 
+        /**
+         * 设置loading dp
+         */
+        public Builder setLoadingSize(int dp) {
+            loadingSize = dp;
+            return this;
+        }
+
+        /**
+         * 设置字体大小
+         */
+        public Builder setTextSize(int sp) {
+            textSize = sp;
+            return this;
+        }
+
         public QHTipDialog create(){
             return create(true);
         }
@@ -154,20 +173,14 @@ public class QHTipDialog extends Dialog {
             if (mCurrentIconType == ICON_TYPE_LOADING) {
                 QHLoadingView loadingView = new QHLoadingView(mContext);
                 loadingView.setColor(Color.WHITE);
-                loadingView.setSize(DensityUtil.dip2px(mContext, 32));
+                loadingView.setSize(DensityUtil.dip2px(mContext, loadingSize));
                 LinearLayout.LayoutParams loadingViewLP = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 loadingView.setLayoutParams(loadingViewLP);
                 contentWrap.addView(loadingView);
-
-//                ProgressBar progressBar = new ProgressBar(mContext);
-//                progressBar.setIndeterminateDrawable(mContext.getResources().getDrawable(R.drawable.loading_anim));
-//                LinearLayout.LayoutParams loadingViewLP = new LinearLayout.LayoutParams(DensityUtil.dip2px(mContext, 32), DensityUtil.dip2px(mContext, 32));
-//                progressBar.setLayoutParams(loadingViewLP);
-//                contentWrap.addView(progressBar);
-
             } else if (mCurrentIconType == ICON_TYPE_SUCCESS || mCurrentIconType == ICON_TYPE_FAIL || mCurrentIconType == ICON_TYPE_INFO) {
                 ImageView imageView = new ImageView(mContext);
-                LinearLayout.LayoutParams imageViewLP = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                int imagePx = DensityUtil.dip2px(mContext, loadingSize);
+                LinearLayout.LayoutParams imageViewLP = new LinearLayout.LayoutParams(imagePx, imagePx);
                 imageView.setLayoutParams(imageViewLP);
 
                 if (mCurrentIconType == ICON_TYPE_SUCCESS) {
@@ -179,7 +192,6 @@ public class QHTipDialog extends Dialog {
                 }
 
                 contentWrap.addView(imageView);
-
             }
 
             if (mTipWord != null && mTipWord.length() > 0) {
@@ -195,7 +207,7 @@ public class QHTipDialog extends Dialog {
                 tipView.setGravity(Gravity.CENTER);
                 tipView.setMaxLines(2);
                 tipView.setTextColor(ContextCompat.getColor(mContext, R.color.white));
-                tipView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
+                tipView.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
                 tipView.setText(mTipWord);
 
                 contentWrap.addView(tipView);

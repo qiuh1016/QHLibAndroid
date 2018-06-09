@@ -101,10 +101,6 @@ public class BlankFragment extends Fragment {
         rootView.findViewById(R.id.btn_tip).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                QHOwnTipDialog qhOwnTipDialog = new QHOwnTipDialog(getActivity());
-//                qhOwnTipDialog.setText("正在加载中");
-//                qhOwnTipDialog.show();
-
                 qhTipDialog = new QHTipDialog.Builder(getActivity())
                         .setIconType(QHTipDialog.Builder.ICON_TYPE_LOADING)
                         .setTipWord("加载中")
