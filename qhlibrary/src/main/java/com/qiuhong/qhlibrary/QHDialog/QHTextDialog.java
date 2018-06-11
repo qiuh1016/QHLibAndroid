@@ -41,6 +41,7 @@ public class QHTextDialog extends Dialog {
     }
 
     private void initTextDialog() {
+        this.setCancelable(false);
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.text_dialog, null);
         addContentView(layout, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
