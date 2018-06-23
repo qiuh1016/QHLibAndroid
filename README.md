@@ -145,6 +145,71 @@ or
 
     setCurrentFragment(index);
 
+Usage-QHDialog
+--------------
+
+```
+QHEditDialog qhEditDialog = new QHEditDialog(getActivity());
+qhEditDialog.setTitle("IP", "PORT");
+qhEditDialog.setOnBtnClicked(new QHEditDialog.OnBtnClicked() {
+    @Override
+    public void onCancelClicked() {
+	//
+    }
+
+    @Override
+    public void onConfirmClicked(String str1, String str2) {
+	Toast.makeText(getActivity(), str1 + " , " + str2, Toast.LENGTH_SHORT).show();
+    }
+});
+qhEditDialog.show();
+```
+
+```
+QHTextDialog qhTextDialog = new QHTextDialog(getActivity());
+qhTextDialog.setTitle("提示");
+qhTextDialog.setContent("确认删除xxxx吗？");
+qhTextDialog.setConfirmText("删除");
+qhTextDialog.setConfirmColor(QHTextDialog.COLOR_RED);
+qhTextDialog.setOnBtnClicked(new QHTextDialog.OnBtnClicked() {
+    @Override
+    public void onCancelClicked() {
+	//
+    }
+
+    @Override
+    public void onConfirmClicked() {
+	Toast.makeText(getActivity(), "已删除", Toast.LENGTH_SHORT).show();
+    }
+});
+qhTextDialog.show();
+```
+
+```
+qhTipDialog = new QHTipDialog.Builder(getActivity())
+	.setIconType(QHTipDialog.Builder.ICON_TYPE_LOADING)
+	.setTipWord("加载中")
+	.create(false);
+qhTipDialog.show();
+new Handler().postDelayed(new Runnable() {
+    @Override
+    public void run() {
+	qhTipDialog.dismiss();
+	qhTipDialog = new QHTipDialog.Builder(getActivity())
+		.setIconType(QHTipDialog.Builder.ICON_TYPE_SUCCESS)
+		.setTipWord("加载成功")
+		.create(false);
+	qhTipDialog.show();
+	new Handler().postDelayed(new Runnable() {
+	    @Override
+	    public void run() {
+		qhTipDialog.dismiss();
+	    }
+	}, 1500);
+
+    }
+}, 3000);
+```
 
 Contact me
 -------------
