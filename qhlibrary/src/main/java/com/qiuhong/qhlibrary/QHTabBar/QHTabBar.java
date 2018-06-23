@@ -125,7 +125,7 @@ public class QHTabBar extends LinearLayout implements View.OnClickListener {
     }
 
     public void setFocus(int position) {
-        for (int i = 0; i < tabImageList.size(); i++) {
+        for (int i = 0; i < normalImages.length; i++) {
             tabImageList.get(i).setImageResource(normalImages[i]);
         }
         tabImageList.get(position).setImageResource(focusImages[position]);
